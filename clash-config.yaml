@@ -1,0 +1,43 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+
+proxies:
+  - name: "VLESS-东京"
+    type: vless
+    server: hy2cn.duckdns.org
+    port: 443
+    uuid: "c65dc6a9-9fff-4622-8afe-4ceb6434c5bb"
+    flow: xtls-rprx-vision
+    udp: true
+    servername: www.microsoft.com
+    reality: true
+    public-key: "uY1SFePkHe9CkfVPXM7calnltiBEKKgVhShVTz7DtxI"
+    short-id: "49f859383a82aa45"
+
+  - name: "HY2-东京"
+    type: hysteria2
+    server: hy2cn.duckdns.org
+    port: 443
+    password: "ltqR44X0btLQ5xBHwVc6"
+    sni: hy2cn.duckdns.org
+    skip-cert-verify: true
+    udp: true
+
+proxy-groups:
+  - name: "Proxy"
+    type: select
+    proxies:
+      - "VLESS-东京"
+      - "HY2-东京"
+      - "DIRECT"
+
+rules:
+  - IP-CIDR,193.108.118.153/32,VLESS-东京,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - MATCH,Proxy
