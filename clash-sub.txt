@@ -1,0 +1,2 @@
+vless://c65dc6a9-9fff-4622-8afe-4ceb6434c5bb@hy2cn.duckdns.org:443?flow=xtls-rprx-vision&fp=chrome&pbk=uY1SFePkHe9CkfVPXM7calnltiBEKKgVhShVTz7DtxI&security=reality&sid=49f859383a82aa45&sni=www.microsoft.com&spx=%2FIyRRsG0pTQ1Qd4G&type=tcp#vless-443-reality
+hysteria2://ltqR44X0btLQ5xBHwVc6@hy2cn.duckdns.org:443?security=tls&sni=hy2cn.duckdns.org#hy2-443-tls
